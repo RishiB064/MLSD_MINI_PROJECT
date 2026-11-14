@@ -1,0 +1,56 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3508.60it/s]
+# Evaluation results
+
+Prompt version `v2`. 9 scenarios.
+
+| Metric | agent loop (default settings) |
+|---|---|
+| passed | 4 |
+| route_accuracy | 0.4444 |
+| violation_recall | 0.5 |
+| violation_precision | 0.3333 |
+| context_recall | 0.9315 |
+| groundedness | 1.0 |
+| escalation_rate | 0.0 |
+| guardrail_catch | None |
+| guardrail_false_positive | None |
+| invalid_rejected | None |
+| avg_tool_calls | 5.3333 |
+| avg_seconds | 28.2539 |
+| avg_tokens | 9250.0 |
+| avg_cost_usd | 0.0 |
+
+## agent loop (default settings): scenarios that did not pass
+
+- `s12` Taller than 12 m on a plot above 250 sq m (Table 9 is not in the documents): expected specialist-review got clear-for-submission; expected violations [] found [] 
+    - findings: [['ZR.4.1.2.b', 'satisfied'], ['ZR.T8.r4', 'satisfied'], ['BL.12.9', 'info'], ['BL.5.2.7.1', 'info'], ['ZR.3.1.iii', 'info']]
+    - rules never retrieved: []
+    - verifier problems: []
+    - reason: no violation found among the retrieved provisions; this is not a certification
+    - searches: ['setbacks residential building height plot area', 'Table 8', 'maximum height road width residential', 'setbacks building height above 12 meters', 'fire and life safety requirements', 'FAR coverage parking residential']
+- `s13` Wide road (9 m or more): the 15 m narrow-road limit does not apply: expected clear-for-submission got revise-and-recheck; expected violations [] found ['BL.2.149'] 
+    - findings: [['ZR.4.1.2.b', 'satisfied'], ['ZR.T9.N6', 'info'], ['BL.5.2.7.1', 'info'], ['BL.6.3', 'info'], ['ZR.T9.N1', 'info'], ['BL.12.9', 'info'], ['BL.2.149', 'violated'], ['ZR.3.1.iii', 'info'], ['ZR.3.1.ii', 'satisfied'], ['ZR.T8.r4', 'satisfied']]
+    - rules never retrieved: []
+    - verifier problems: []
+    - reason: violations found in: BL.2.149
+    - searches: ['setbacks residential plot area 400 sqm', 'Table 8', 'maximum height building road width residential', 'maximum floor area ratio FAR ground coverage parking residential', 'fire safety requirements residential building', 'stilt floor open parking height', 'setbacks buildings over 12 meters table']
+- `s15` Open parking floor too high (4.0 m): expected revise-and-recheck got clear-for-submission; expected violations ['BL.2.149'] found [] 
+    - findings: [['ZR.T8.r3', 'satisfied'], ['BL.5.2.7.1', 'info'], ['ZR.3.1.ii', 'info'], ['ZR.4.1.2.b', 'satisfied'], ['ZR.T9.N1', 'satisfied']]
+    - rules never retrieved: ['BL.2.149']
+    - verifier problems: []
+    - reason: no violation found among the retrieved provisions; this is not a certification
+    - searches: ['setbacks residential building height']
+- `s16` Open parking floor of 3.2 m (only allowed with mechanical parking): expected specialist-review got revise-and-recheck; expected violations [] found ['BL.2.149'] 
+    - findings: [['ZR.4.1.2.b', 'satisfied'], ['ZR.T9.N6', 'info'], ['ZR.3.1.ii', 'satisfied'], ['ZR.3.1.iii', 'satisfied'], ['BL.12.9', 'info'], ['BL.5.2.7.1', 'info'], ['BL.2.149', 'violated'], ['ZR.T9.N1', 'satisfied'], ['BL.2.87', 'info'], ['ZR.T8.r3', 'satisfied']]
+    - rules never retrieved: []
+    - verifier problems: []
+    - reason: violations found in: BL.2.149
+    - searches: ['setbacks building height up to 12m and above 12m residential', 'height limit narrow road building height road width', 'Floor Area Ratio FAR coverage residential maximum', 'fire and life safety requirements residential building']
+- `s17` High-rise 18 m on a big plot (Table 9 and fire rules are needed): expected specialist-review got clear-for-submission; expected violations [] found [] 
+    - findings: [['ZR.T8.r5', 'satisfied'], ['BL.12.9', 'info'], ['ZR.T9.N6', 'info'], ['BL.5.2.7.1', 'info'], ['ZR.3.1.iii', 'info']]
+    - rules never retrieved: []
+    - verifier problems: []
+    - reason: no violation found among the retrieved provisions; this is not a certification
+    - searches: ['setbacks building height up to 12m and taller buildings', 'Floor Area Ratio FAR coverage parking requirements', 'fire and life safety requirements', 'Table 8', 'height limit for small plots']
+
+TARGETS: MISSED: route_accuracy = 0.4444 (target >= 0.9); violation_recall = 0.5 (target >= 0.9)
