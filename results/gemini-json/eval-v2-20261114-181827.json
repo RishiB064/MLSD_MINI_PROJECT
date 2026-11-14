@@ -1,0 +1,335 @@
+{
+ "prompt_version": "v2",
+ "results": [
+  {
+   "name": "agent loop (default settings)",
+   "overrides": {},
+   "summary": {
+    "scenarios": 4,
+    "passed": 3,
+    "route_accuracy": 0.75,
+    "violation_recall": 1.0,
+    "violation_precision": 1.0,
+    "context_recall": 0.9375,
+    "groundedness": 1.0,
+    "escalation_rate": 0.25,
+    "guardrail_catch": null,
+    "guardrail_false_positive": null,
+    "invalid_rejected": null,
+    "avg_tool_calls": 5.75,
+    "avg_seconds": 34.1568,
+    "avg_tokens": 10868.5,
+    "avg_cost_usd": 0.0
+   },
+   "rows": [
+    {
+     "id": "s10",
+     "kind": "normal",
+     "note": "Plot between 60 and 150 sq m with the gaps the table asks for",
+     "expected_route": "clear-for-submission",
+     "route": "clear-for-submission",
+     "route_ok": true,
+     "expected_violations": [],
+     "found_violations": [],
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 1.0,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 6,
+     "attempts": 1,
+     "seconds": 34.481,
+     "cost_usd": 0.0,
+     "tokens": 11508,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 34.48,
+     "findings": [
+      [
+       "ZR.4.1.2.b",
+       "satisfied"
+      ],
+      [
+       "ZR.T9.N1",
+       "satisfied"
+      ],
+      [
+       "BL.6.3",
+       "info"
+      ],
+      [
+       "BL.12.9",
+       "info"
+      ],
+      [
+       "ZR.T8.r2",
+       "satisfied"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.3.1.ii",
+       "info"
+      ]
+     ],
+     "retrieved": [
+      "BL.12.9",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5",
+      "ZR.T9.N1",
+      "ZR.T9.N6"
+     ],
+     "missing": [],
+     "queries": [
+      "setbacks residential building up to 12m height",
+      "height limit narrow road",
+      "Table 8",
+      "height limit small plots",
+      "fire and life safety requirements",
+      "FAR coverage and parking requirements residential"
+     ],
+     "problems": [],
+     "reason": "no violation found among the retrieved provisions; this is not a certification",
+     "ok": true
+    },
+    {
+     "id": "s11",
+     "kind": "normal",
+     "note": "Plot between 60 and 150 sq m, neither side gap is big enough",
+     "expected_route": "revise-and-recheck",
+     "route": "revise-and-recheck",
+     "route_ok": true,
+     "expected_violations": [
+      "ZR.T8.r2"
+     ],
+     "found_violations": [
+      "ZR.T8.r2"
+     ],
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 1.0,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 6,
+     "attempts": 1,
+     "seconds": 35.002,
+     "cost_usd": 0.0,
+     "tokens": 10698,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 35.0,
+     "findings": [
+      [
+       "ZR.T8.r2",
+       "violated"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.3.1.ii",
+       "info"
+      ],
+      [
+       "ZR.4.1.2.b",
+       "satisfied"
+      ],
+      [
+       "ZR.T9.N1",
+       "satisfied"
+      ]
+     ],
+     "retrieved": [
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5",
+      "ZR.T9.N1",
+      "ZR.T9.N6"
+     ],
+     "missing": [],
+     "queries": [
+      "setback residential plot area building height",
+      "Table 8",
+      "height limit narrow road small plot",
+      "stilt open parking floor height",
+      "fire and life safety requirements",
+      "floor area ratio ground coverage parking requirements residential"
+     ],
+     "problems": [],
+     "reason": "violations found in: ZR.T8.r2",
+     "ok": true
+    },
+    {
+     "id": "s14",
+     "kind": "normal",
+     "note": "Open parking floor of 2.7 m: height without it is within 12 m",
+     "expected_route": "clear-for-submission",
+     "route": "specialist-review",
+     "route_ok": false,
+     "expected_violations": [],
+     "found_violations": [],
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 1.0,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 8,
+     "attempts": 1,
+     "seconds": 46.203,
+     "cost_usd": 0.0,
+     "tokens": 15062,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 46.2,
+     "findings": [
+      [
+       "BL.6.3",
+       "needs_review"
+      ],
+      [
+       "BL.12.9",
+       "info"
+      ],
+      [
+       "ZR.4.1.2.b",
+       "satisfied"
+      ],
+      [
+       "ZR.T9.N1",
+       "satisfied"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.T8.r3",
+       "satisfied"
+      ],
+      [
+       "ZR.3.1.ii",
+       "info"
+      ],
+      [
+       "BL.2.149",
+       "satisfied"
+      ]
+     ],
+     "retrieved": [
+      "BL.12.9",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5",
+      "ZR.T9.N1",
+      "ZR.T9.N6"
+     ],
+     "missing": [],
+     "queries": [
+      "setbacks residential plot area",
+      "Table 8",
+      "setbacks buildings above 12 meters height",
+      "height limit narrow road plot size",
+      "stilt open parking floors",
+      "fire and life safety requirements",
+      "FAR coverage parking permissible limits",
+      "height limit small plots"
+     ],
+     "problems": [],
+     "reason": "one or more provisions could not be evaluated from the data given: BL.6.3",
+     "ok": false
+    },
+    {
+     "id": "s18",
+     "kind": "normal",
+     "note": "Plot above 4000 sq m, low building, 5 m gaps all round",
+     "expected_route": "clear-for-submission",
+     "route": "clear-for-submission",
+     "route_ok": true,
+     "expected_violations": [],
+     "found_violations": [],
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 0.75,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 3,
+     "attempts": 1,
+     "seconds": 20.941,
+     "cost_usd": 0.0,
+     "tokens": 6206,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 20.94,
+     "findings": [
+      [
+       "ZR.T8.r5",
+       "satisfied"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.3.1.ii",
+       "info"
+      ]
+     ],
+     "retrieved": [
+      "BL.2.142",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5"
+     ],
+     "missing": [],
+     "queries": [
+      "setbacks residential building",
+      "Table 8",
+      "height limit road width floors"
+     ],
+     "problems": [],
+     "reason": "no violation found among the retrieved provisions; this is not a certification",
+     "ok": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,437 @@
+{
+ "prompt_version": "v2",
+ "results": [
+  {
+   "name": "agent loop (default settings)",
+   "overrides": {},
+   "summary": {
+    "scenarios": 5,
+    "passed": 5,
+    "route_accuracy": 1.0,
+    "violation_recall": 1.0,
+    "violation_precision": 1.0,
+    "context_recall": 0.95,
+    "groundedness": 1.0,
+    "escalation_rate": 0.6,
+    "guardrail_catch": null,
+    "guardrail_false_positive": null,
+    "invalid_rejected": null,
+    "avg_tool_calls": 5.0,
+    "avg_seconds": 30.2824,
+    "avg_tokens": 9626.4,
+    "avg_cost_usd": 0.0
+   },
+   "rows": [
+    {
+     "id": "s12",
+     "kind": "normal",
+     "note": "Taller than 12 m on a plot above 250 sq m (Table 9 is not in the documents)",
+     "expected_route": "specialist-review",
+     "route": "specialist-review",
+     "route_ok": true,
+     "expected_violations": [],
+     "found_violations": [],
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 1.0,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 5,
+     "attempts": 1,
+     "seconds": 30.124,
+     "cost_usd": 0.0,
+     "tokens": 10115,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 30.12,
+     "findings": [
+      [
+       "ZR.T8.r4",
+       "satisfied"
+      ],
+      [
+       "ZR.4.1.2.b",
+       "satisfied"
+      ],
+      [
+       "ZR.3.1.ii",
+       "needs_review"
+      ],
+      [
+       "BL.6.3",
+       "info"
+      ],
+      [
+       "BL.12.9",
+       "info"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.3.1.iii",
+       "needs_review"
+      ]
+     ],
+     "retrieved": [
+      "BL.12.9",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5",
+      "ZR.T9.N1",
+      "ZR.T9.N6"
+     ],
+     "missing": [],
+     "queries": [
+      "setbacks building height above 12m up to 12m",
+      "Table 8",
+      "height limit road width narrow road maximum height",
+      "fire and life safety requirements building",
+      "FAR coverage parking requirements"
+     ],
+     "problems": [],
+     "reason": "one or more provisions could not be evaluated from the data given: ZR.3.1.ii, ZR.3.1.iii",
+     "ok": true
+    },
+    {
+     "id": "s13",
+     "kind": "normal",
+     "note": "Wide road (9 m or more): the 15 m narrow-road limit does not apply",
+     "expected_route": "clear-for-submission",
+     "route": "clear-for-submission",
+     "route_ok": true,
+     "expected_violations": [],
+     "found_violations": [],
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 0.75,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 6,
+     "attempts": 1,
+     "seconds": 35.559,
+     "cost_usd": 0.0,
+     "tokens": 11382,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 35.56,
+     "findings": [
+      [
+       "ZR.T9.N6",
+       "info"
+      ],
+      [
+       "BL.12.9",
+       "info"
+      ],
+      [
+       "ZR.T8.r4",
+       "satisfied"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.3.1.ii",
+       "info"
+      ]
+     ],
+     "retrieved": [
+      "BL.12.9",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5",
+      "ZR.T9.N1",
+      "ZR.T9.N6"
+     ],
+     "missing": [],
+     "queries": [
+      "setback building height up to 12m residential",
+      "Table 8",
+      "height limit road width small plots residential",
+      "stilt floor open parking height residential",
+      "fire life safety building requirements",
+      "FAR coverage parking residential limits"
+     ],
+     "problems": [],
+     "reason": "no violation found among the retrieved provisions; this is not a certification",
+     "ok": true
+    },
+    {
+     "id": "s15",
+     "kind": "normal",
+     "note": "Open parking floor too high (4.0 m)",
+     "expected_route": "revise-and-recheck",
+     "route": "revise-and-recheck",
+     "route_ok": true,
+     "expected_violations": [
+      "BL.2.149"
+     ],
+     "found_violations": [
+      "BL.2.149"
+     ],
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 1.0,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 4,
+     "attempts": 1,
+     "seconds": 21.991,
+     "cost_usd": 0.0,
+     "tokens": 6645,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 21.99,
+     "findings": [
+      [
+       "ZR.4.1.2.b",
+       "satisfied"
+      ],
+      [
+       "BL.12.9",
+       "info"
+      ],
+      [
+       "BL.6.3",
+       "info"
+      ],
+      [
+       "ZR.T8.r3",
+       "satisfied"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.3.1.ii",
+       "info"
+      ],
+      [
+       "ZR.T9.N1",
+       "satisfied"
+      ],
+      [
+       "BL.2.149",
+       "violated"
+      ]
+     ],
+     "retrieved": [
+      "BL.12.9",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T9.N1"
+     ],
+     "missing": [],
+     "queries": [
+      "setbacks building height up to 12m and taller residential",
+      "height limit road width narrow road maximum height",
+      "FAR coverage parking residential maximum floor area ratio"
+     ],
+     "problems": [],
+     "reason": "violations found in: BL.2.149",
+     "ok": true
+    },
+    {
+     "id": "s16",
+     "kind": "normal",
+     "note": "Open parking floor of 3.2 m (only allowed with mechanical parking)",
+     "expected_route": "specialist-review",
+     "route": "specialist-review",
+     "route_ok": true,
+     "expected_violations": [],
+     "found_violations": [],
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 1.0,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 5,
+     "attempts": 1,
+     "seconds": 32.026,
+     "cost_usd": 0.0,
+     "tokens": 9946,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 32.03,
+     "findings": [
+      [
+       "BL.12.9",
+       "info"
+      ],
+      [
+       "BL.6.3",
+       "info"
+      ],
+      [
+       "ZR.T8.r3",
+       "satisfied"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.3.1.ii",
+       "info"
+      ],
+      [
+       "ZR.4.1.2.b",
+       "satisfied"
+      ],
+      [
+       "ZR.T9.N1",
+       "satisfied"
+      ],
+      [
+       "BL.2.149",
+       "needs_review"
+      ]
+     ],
+     "retrieved": [
+      "BL.12.9",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5",
+      "ZR.T9.N1",
+      "ZR.T9.N6"
+     ],
+     "missing": [],
+     "queries": [
+      "setback building height up to 12m and above 12m residential",
+      "Table 8",
+      "height limit road width narrow road maximum height",
+      "fire and life safety requirements residential building",
+      "floor area ratio FAR coverage parking requirements residential"
+     ],
+     "problems": [],
+     "reason": "one or more provisions could not be evaluated from the data given: BL.2.149",
+     "ok": true
+    },
+    {
+     "id": "s17",
+     "kind": "normal",
+     "note": "High-rise 18 m on a big plot (Table 9 and fire rules are needed)",
+     "expected_route": "specialist-review",
+     "route": "specialist-review",
+     "route_ok": true,
+     "expected_violations": [],
+     "found_violations": [],
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 1.0,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 5,
+     "attempts": 1,
+     "seconds": 31.712,
+     "cost_usd": 0.0,
+     "tokens": 10044,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 31.71,
+     "findings": [
+      [
+       "ZR.T8.r5",
+       "satisfied"
+      ],
+      [
+       "ZR.4.1.2.b",
+       "satisfied"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.T9.N6",
+       "info"
+      ],
+      [
+       "BL.6.3",
+       "info"
+      ],
+      [
+       "BL.12.9",
+       "info"
+      ],
+      [
+       "BL.2.142",
+       "info"
+      ],
+      [
+       "ZR.3.1.iii",
+       "needs_review"
+      ]
+     ],
+     "retrieved": [
+      "BL.12.9",
+      "BL.2.142",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5",
+      "ZR.T9.N1",
+      "ZR.T9.N6"
+     ],
+     "missing": [],
+     "queries": [
+      "setbacks building height plot area",
+      "Table 8",
+      "height limit road width building height",
+      "FAR coverage parking requirements",
+      "fire safety"
+     ],
+     "problems": [],
+     "reason": "one or more provisions could not be evaluated from the data given: ZR.3.1.iii",
+     "ok": true
+    }
+   ]
+  }
+ ]
+}

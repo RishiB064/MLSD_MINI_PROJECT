@@ -1,0 +1,118 @@
+{
+ "prompt_version": "v2",
+ "results": [
+  {
+   "name": "agent loop (default settings)",
+   "overrides": {},
+   "summary": {
+    "scenarios": 1,
+    "passed": 1,
+    "route_accuracy": 1.0,
+    "violation_recall": null,
+    "violation_precision": null,
+    "context_recall": 1.0,
+    "groundedness": 1.0,
+    "escalation_rate": 0.0,
+    "guardrail_catch": null,
+    "guardrail_false_positive": null,
+    "invalid_rejected": null,
+    "avg_tool_calls": 6.0,
+    "avg_seconds": 35.13,
+    "avg_tokens": 11957.0,
+    "avg_cost_usd": 0.0
+   },
+   "rows": [
+    {
+     "id": "s14",
+     "kind": "normal",
+     "note": "Open parking floor of 2.7 m: height without it is within 12 m",
+     "expected_route": "clear-for-submission",
+     "route": "clear-for-submission",
+     "route_ok": true,
+     "expected_violations": [],
+     "found_violations": [],
+     "tp": 0,
+     "fp": 0,
+     "fn": 0,
+     "context_recall": 1.0,
+     "groundedness": 1.0,
+     "verified": true,
+     "tool_calls": 6,
+     "attempts": 1,
+     "seconds": 35.13,
+     "cost_usd": 0.0,
+     "tokens": 11957,
+     "flag_injection": false,
+     "flag_toxic": false,
+     "wall_s": 35.13,
+     "findings": [
+      [
+       "ZR.4.1.2.b",
+       "satisfied"
+      ],
+      [
+       "ZR.T9.N6",
+       "info"
+      ],
+      [
+       "BL.12.9",
+       "info"
+      ],
+      [
+       "BL.6.3",
+       "info"
+      ],
+      [
+       "ZR.T9.N1",
+       "satisfied"
+      ],
+      [
+       "ZR.T8.r3",
+       "satisfied"
+      ],
+      [
+       "BL.5.2.7.1",
+       "info"
+      ],
+      [
+       "ZR.3.1.ii",
+       "info"
+      ],
+      [
+       "BL.2.149",
+       "satisfied"
+      ]
+     ],
+     "retrieved": [
+      "BL.12.9",
+      "BL.2.149",
+      "BL.5.2.7.1",
+      "BL.6.3",
+      "ZR.3.1.ii",
+      "ZR.3.1.iii",
+      "ZR.4.1.2.b",
+      "ZR.T8.r1",
+      "ZR.T8.r2",
+      "ZR.T8.r3",
+      "ZR.T8.r4",
+      "ZR.T8.r5",
+      "ZR.T9.N1",
+      "ZR.T9.N6"
+     ],
+     "missing": [],
+     "queries": [
+      "setbacks residential building height up to 12m and above 12m",
+      "setbacks buildings up to 12m table",
+      "Table 8",
+      "height limit road width narrow road maximum height",
+      "fire and life safety requirements building",
+      "FAR floor area ratio coverage parking requirements"
+     ],
+     "problems": [],
+     "reason": "no violation found among the retrieved provisions; this is not a certification",
+     "ok": true
+    }
+   ]
+  }
+ ]
+}

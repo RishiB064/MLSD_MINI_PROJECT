@@ -1,0 +1,91 @@
+{
+ "prompt_version": "v2",
+ "results": [
+  {
+   "name": "agent loop (default settings)",
+   "overrides": {},
+   "summary": {
+    "scenarios": 9,
+    "passed": 9,
+    "route_accuracy": null,
+    "violation_recall": null,
+    "violation_precision": null,
+    "context_recall": null,
+    "groundedness": null,
+    "escalation_rate": null,
+    "guardrail_catch": null,
+    "guardrail_false_positive": null,
+    "invalid_rejected": 1.0,
+    "avg_tool_calls": null,
+    "avg_seconds": null,
+    "avg_tokens": null,
+    "avg_cost_usd": null
+   },
+   "rows": [
+    {
+     "id": "s27",
+     "kind": "invalid",
+     "note": "Negative road width",
+     "rejected": true,
+     "ok": true
+    },
+    {
+     "id": "s28",
+     "kind": "invalid",
+     "note": "Height does not fit the number of floors (40 m, 3 floors)",
+     "rejected": true,
+     "ok": true
+    },
+    {
+     "id": "s29",
+     "kind": "invalid",
+     "note": "Unknown building use",
+     "rejected": true,
+     "ok": true
+    },
+    {
+     "id": "s30",
+     "kind": "invalid",
+     "note": "Floor area bigger than the plot allows",
+     "rejected": true,
+     "ok": true
+    },
+    {
+     "id": "s31",
+     "kind": "invalid",
+     "note": "A required number is missing (front gap)",
+     "rejected": true,
+     "ok": true
+    },
+    {
+     "id": "s32",
+     "kind": "invalid",
+     "note": "An unexpected extra field",
+     "rejected": true,
+     "ok": true
+    },
+    {
+     "id": "s33",
+     "kind": "invalid",
+     "note": "Plot depth times width does not match the plot size",
+     "rejected": true,
+     "ok": true
+    },
+    {
+     "id": "s34",
+     "kind": "invalid",
+     "note": "Front and rear gaps as deep as the whole plot",
+     "rejected": true,
+     "ok": true
+    },
+    {
+     "id": "s35",
+     "kind": "invalid",
+     "note": "Open parking floor leaves no room for any floor above",
+     "rejected": true,
+     "ok": true
+    }
+   ]
+  }
+ ]
+}

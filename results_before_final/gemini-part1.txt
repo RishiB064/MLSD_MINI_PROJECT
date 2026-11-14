@@ -1,0 +1,28 @@
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3216.04it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+# Evaluation results
+
+Prompt version `v2`. 9 scenarios.
+
+| Metric | agent loop (default settings) |
+|---|---|
+| passed | 9 |
+| route_accuracy | 1.0 |
+| violation_recall | 1.0 |
+| violation_precision | 1.0 |
+| context_recall | 1.0 |
+| groundedness | 1.0 |
+| escalation_rate | 0.1111 |
+| guardrail_catch | None |
+| guardrail_false_positive | None |
+| invalid_rejected | None |
+| avg_tool_calls | 5.8889 |
+| avg_seconds | 30.8831 |
+| avg_tokens | 9646.7778 |
+| avg_cost_usd | 0.0 |
+
+## agent loop (default settings): scenarios that did not pass
+
+None.
+
+TARGETS: all met
