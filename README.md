@@ -32,7 +32,7 @@ Any OpenAI-compatible provider works. Edit `.env`, then recreate the containers
 **Google Gemini (current setup)**: create a key in Google AI Studio (it starts with `AIza`) and put it in `.env`:
 ```
 LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai   # no trailing slash
-LLM_API_KEY=AIza...            # your own key; never commit it
+LLM_API_KEY=AIza...            # your own key
 LLM_MODEL=gemini-3.5-flash-lite  # the model used for the reported results
 LLM_JSON_MODE=false            # try true if replies fail to parse
 LLM_REASONING_EFFORT=low       # "none" switches thinking off on 2.5 Flash models; "low" is valid everywhere
