@@ -1,7 +1,7 @@
 {
   "ok": true,
   "model": "gemini-3.5-flash-lite",
-  "latency_s": 1.06,
+  "latency_s": 1.09,
   "prompt_tokens": 8,
   "completion_tokens": 1,
   "cost_usd": 0.0,

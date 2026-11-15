@@ -27,7 +27,7 @@ compare, and then check their own work.
    Say: "Two problems. See the bars: red means over the limit, the black line is the limit." Open *Show the exact rule text*
    on the height one: "every answer points at the real rule".
 2. Press "Within the limits", check. "No problems found, but notice it says this is not an approval."
-3. Press "A sneaky note", check. "Someone tried to trick it with a note. It ignored the note and sent the case to a person."
+3. Press "A misdirecting note", check. "Someone tried to trick it with a note. It ignored the note and sent the case to a person."
 4. Press "Numbers that don't add up", check. "Bad data never even starts a check."
 5. Open Grafana (http://localhost:3000). "One screen per agent: how fast, how many AI calls, what it costs,
    how often the checker sends an answer back."

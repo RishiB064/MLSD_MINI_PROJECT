@@ -96,26 +96,26 @@ Evaluation set. 35 scenarios in `eval/scenarios.jsonl`: 22 normal proposals (inc
 
 Metrics (computed in plain code from the rule text, so they need no judge model; they mirror TruLens' RAG-triad ideas, but TruLens itself is not installed): route accuracy; violation recall and precision; context recall (the rules that apply were really retrieved); groundedness (every quote is verbatim from the rule it cites); guardrail catch and false positive rates; invalid-request rejection; average tool calls, seconds, tokens and cost.
 
-Results with the real model. Google `gemini-3.5-flash-lite` through its OpenAI-compatible endpoint, free tier, prompt `v2`, real `all-MiniLM-L6-v2` embedder and FAISS index, run inside Docker on 14 November 2026. The 35 scenarios were run in four parts (`--workers 1`) to fit the free tier's limits; the logs are `results/gemini-part1.txt` to `gemini-part4.txt` plus the re-runs below, and the per-scenario JSON is in `results/gemini-json/`.
+Results with the real model. Google `gemini-3.5-flash-lite` through its OpenAI-compatible endpoint, free tier, prompt `v2`, real `all-MiniLM-L6-v2` embedder and FAISS index, run inside Docker on 14 and 15 November 2026. The 35 scenarios were run in four parts (`--workers 1`) to fit the free tier's limits; the logs are `results/gemini-part1.txt` to `gemini-part4.txt` plus the re-runs below, and the per-scenario JSON is in `results/gemini-json/`.
 
 | Metric | Target | First run (old code) | Final (after the fixes below) |
 |---|---|---|---|
 | Scenarios passed | | 13 of 18 (s01 to s18) | **35 of 35** |
 | Route accuracy | 0.90 or more | 0.72 (s01 to s18) | **1.00** |
 | Violation recall | 0.90 or more | 0.50 on s10 to s18 | **1.00** |
-| Violation precision | | 0.33 on s10 to s18 | **1.00** |
+| Violation precision | | 0.33 on s10 to s18 | 1.00 on s01 to s09 and s19 to s26; 0.50 on s10 to s18 (see the note below the table) |
 | Context recall | 0.90 or more | | **0.97** |
 | Groundedness | 1.00 | 1.00 | **1.00** |
 | Escalation rate | | | 0.27 (7 of 26) |
 | Injection caught | 1.00 | | **1.00** (2 of 2) |
 | Harmless notes flagged | 0 | | **0** |
 | Invalid requests rejected | 1.00 | | **1.00** (9 of 9) |
-| Average tool calls | | | 5.5 |
-| Average time per check | | | 30 s (longest 40 s; about 7 model calls, spaced 4.5 s apart) |
-| Average tokens per check | | | about 9,650 |
+| Average tool calls | | | 5.8 |
+| Average time per check | | | 32 s (about 7 model calls, spaced 4.5 s apart) |
+| Average tokens per check | | | about 9,900 |
 | Cost | | | $0 (free tier) |
 
-No check needed a second verification attempt, and no answer cited text that was not in the rule it named.
+No answer cited text that was not in the rule it named. The final figures come from a full re-run on 15 November: s01 to s09 9 of 9, s10 to s18 9 of 9, s19 to s26 8 of 8, and the nine invalid requests all rejected. In s10 to s18 violation precision was 0.50, meaning the system flagged a violation the answer key did not list; the route was still correct and the plan passed, but it is a known imperfection.
 
 What the real model got wrong, and the fix. The first run of s10 to s18 passed only 4 of 9. All five failures were judgement calls the stub had never tested:
 - Buildings over 12 m on big plots (s12, s17). The model called "Table 9 applies" a mere reminder and cleared the plan, but Table 9 is not in our documents, so nobody had checked the gaps.

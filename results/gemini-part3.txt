@@ -1,4 +1,4 @@
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3276.20it/s]
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 3574.70it/s]
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
 # Evaluation results
 
@@ -16,9 +16,9 @@ Prompt version `v2`. 8 scenarios.
 | guardrail_catch | 1.0 |
 | guardrail_false_positive | 0.0 |
 | invalid_rejected | None |
-| avg_tool_calls | 5.625 |
-| avg_seconds | 29.4781 |
-| avg_tokens | 9457.375 |
+| avg_tool_calls | 6.125 |
+| avg_seconds | 33.5702 |
+| avg_tokens | 10631.375 |
 | avg_cost_usd | 0.0 |
 
 ## agent loop (default settings): scenarios that did not pass
